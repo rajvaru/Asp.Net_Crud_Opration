@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="Addressbook.master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Address Book</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Country.aspx">Country</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="State.aspx">State</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="City.aspx">City</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="StateAddEdit.aspx">StateAdd&Edit</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content PlaceHolder -->
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
