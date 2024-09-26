@@ -68,7 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="City.aspx" />
+    <Content Include="CityAddEdit.aspx" />
+    <Content Include="ContactCategory.aspx" />
+    <Content Include="ContactCategoryAddEdit.aspx" />
     <Content Include="Country.aspx" />
+    <Content Include="CountryAddEdit.aspx" />
     <Content Include="State.aspx" />
     <Content Include="StateAddEdit.aspx" />
     <Content Include="Web.config" />
@@ -81,12 +85,40 @@
     <Compile Include="City.aspx.designer.cs">
       <DependentUpon>City.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CityAddEdit.aspx.cs">
+      <DependentUpon>CityAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CityAddEdit.aspx.designer.cs">
+      <DependentUpon>CityAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactCategory.aspx.cs">
+      <DependentUpon>ContactCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactCategory.aspx.designer.cs">
+      <DependentUpon>ContactCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactCategoryAddEdit.aspx.cs">
+      <DependentUpon>ContactCategoryAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactCategoryAddEdit.aspx.designer.cs">
+      <DependentUpon>ContactCategoryAddEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Country.aspx.cs">
       <DependentUpon>Country.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Country.aspx.designer.cs">
       <DependentUpon>Country.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CountryAddEdit.aspx.cs">
+      <DependentUpon>CountryAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CountryAddEdit.aspx.designer.cs">
+      <DependentUpon>CountryAddEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="master.Master.cs">
       <DependentUpon>master.Master</DependentUpon>

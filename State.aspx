@@ -12,9 +12,8 @@
             <asp:BoundField DataField="StateCode" HeaderText="StateCode" />
             <asp:TemplateField HeaderText="Action">
                 <ItemTemplate>
-
+                    <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-info" CommandName="EditRecord" CommandArgument='<%# Eval("StateID") %>' NavigateUrl="~/StateAddEdit.aspx" />
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" CommandName="DeleteRecord" CommandArgument='<%# Eval("StateID") %>' />
-                    <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-info" CommandName="EditRecord" CommandArgument='<%# Eval("StateID") %>' />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

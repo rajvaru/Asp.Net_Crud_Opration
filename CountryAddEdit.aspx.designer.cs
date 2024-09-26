@@ -11,17 +11,17 @@ namespace Addressbook
 {
 
 
-    public partial class StateAddEdit
+    public partial class CountryAddEdit
     {
 
         /// <summary>
-        /// ddlCountryID control.
+        /// txtCountryID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCountryID;
+        protected global::System.Web.UI.WebControls.TextBox txtCountryID;
 
         /// <summary>
         /// rfvCountryID control.
@@ -33,58 +33,40 @@ namespace Addressbook
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountryID;
 
         /// <summary>
-        /// txtStateID control.
+        /// txtCountryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStateID;
+        protected global::System.Web.UI.WebControls.TextBox txtCountryName;
 
         /// <summary>
-        /// rfvStateID control.
+        /// rfvCountryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateID;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountryName;
 
         /// <summary>
-        /// txtStateName control.
+        /// txtCountryCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStateName;
+        protected global::System.Web.UI.WebControls.TextBox txtCountryCode;
 
         /// <summary>
-        /// rfvStateName control.
+        /// rfvCountryCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateName;
-
-        /// <summary>
-        /// txtStateCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStateCode;
-
-        /// <summary>
-        /// rfvStateCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateCode;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountryCode;
 
         /// <summary>
         /// btnAdd control.

@@ -5,16 +5,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Country Page</h2>
-    <asp:GridView ID="GridViewCountry" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered">
+    <asp:GridView ID="GridViewCountry" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered" OnRowCommand="GridViewCountry_RowCommand">
         <Columns>
             <asp:BoundField DataField="CountryID" HeaderText="CountryID" />
             <asp:BoundField DataField="CountryName" HeaderText="CountryName" />
             <asp:BoundField DataField="CountryCode" HeaderText="CountryCode" />
             <asp:TemplateField HeaderText="Action">
                 <ItemTemplate>
+                    <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-info" CommandName="EditRecord" CommandArgument='<%# Eval("CountryID") %>' NavigateUrl="~/StateAddEdit.aspx" />
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" CommandName="DeleteRecord" CommandArgument='<%# Eval("CountryID") %>' />
-                    <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-info" CommandName="EditRecord" CommandArgument='<%# Eval("CountryID") %>' />
-
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

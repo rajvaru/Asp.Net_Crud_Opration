@@ -11,80 +11,98 @@ namespace Addressbook
 {
 
 
-    public partial class StateAddEdit
+    public partial class CityAddEdit
     {
 
         /// <summary>
-        /// ddlCountryID control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCountryID;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// rfvCountryID control.
+        /// txtCityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountryID;
+        protected global::System.Web.UI.WebControls.TextBox txtCityName;
 
         /// <summary>
-        /// txtStateID control.
+        /// rfvCityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStateID;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCityName;
 
         /// <summary>
-        /// rfvStateID control.
+        /// txtCityID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateID;
+        protected global::System.Web.UI.WebControls.TextBox txtCityID;
 
         /// <summary>
-        /// txtStateName control.
+        /// rfvCityID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStateName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCityID;
 
         /// <summary>
-        /// rfvStateName control.
+        /// ddlStateID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlStateID;
 
         /// <summary>
-        /// txtStateCode control.
+        /// txtSTDCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStateCode;
+        protected global::System.Web.UI.WebControls.TextBox txtSTDCode;
 
         /// <summary>
-        /// rfvStateCode control.
+        /// rfvSTDCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStateCode;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSTDCode;
+
+        /// <summary>
+        /// txtPinCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPinCode;
+
+        /// <summary>
+        /// rfvPinCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPinCode;
 
         /// <summary>
         /// btnAdd control.

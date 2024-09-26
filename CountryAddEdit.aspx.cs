@@ -9,22 +9,20 @@ using System.Web.UI.WebControls;
 
 namespace Addressbook
 {
-    public partial class StateAddEdit : System.Web.UI.Page
+    public partial class CountryAddEdit : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                BindCountryDropdown();
 
-                if (Request.QueryString["StateID"] != null)
+                if (Request.QueryString["CountryID"] != null)
                 {
-                    EditState(Convert.ToInt32(Request.QueryString["StateID"]));
+                    EditCountry(Convert.ToInt32(Request.QueryString["CountryID"]));
                 }
             }
-
         }
-        public void EditState(int StateID)
+        public void EditCountry(int CountryID)
         {
             SqlConnection objConn = new SqlConnection("Data Source=LAPTOP-NUIFP4D9\\SQLEXPRESS;Initial Catalog=AddressBook;Integrated Security=true;");
 
@@ -32,7 +30,7 @@ namespace Addressbook
             objConn.Open();
             SqlCommand objCmd = objConn.CreateCommand();
             objCmd.CommandType = CommandType.Text;
-            objCmd.CommandText = "SELECT StateID, StateName, StateCode FROM [dbo].[State] WHERE StateID = " + StateID;         
+            objCmd.CommandText = "SELECT CountryID, CountryName, CountryCode FROM [dbo].[Country] WHERE CountryID = " + CountryID;
             SqlDataReader dr = objCmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
@@ -41,9 +39,9 @@ namespace Addressbook
             {
                 foreach (DataRow drow in dt.Rows)
                 {
-                    txtStateID.Text = drow["StateID"].ToString();
-                    txtStateName.Text = drow["StateName"].ToString();
-                    txtStateCode.Text = drow["StateCode"].ToString();
+                    txtCountryID.Text = drow["CountryID"].ToString();
+                    txtCountryName.Text = drow["CountryName"].ToString();
+                    txtCountryCode.Text = drow["CountryCode"].ToString();
                     break;
                 }
             }
@@ -56,22 +54,21 @@ namespace Addressbook
             objConn.Open();
             SqlCommand objCmd = objConn.CreateCommand();
             objCmd.CommandType = CommandType.Text;
-            if (Request.QueryString["StateID"] != null)
+            if (Request.QueryString["CountryID"] != null)
             {
-                objCmd.CommandText = "UPDATE [dbo].[State] SET StateName='" + txtStateName.Text.Trim() + "', StateCode='" + txtStateCode.Text.Trim() + "' WHERE StateID=" + Request.QueryString["StateID"].ToString();
+                objCmd.CommandText = "UPDATE [dbo].[Country] SET CountryName='" + txtCountryName.Text.Trim() + "', CountryCode='" + txtCountryCode.Text.Trim() + "' WHERE CountryID=" + Request.QueryString["CountryID"].ToString();
                 objCmd.ExecuteNonQuery();
             }
             else
             {
-                objCmd.CommandText = "INSERT INTO [dbo].[State] (StateName, StateCode) VALUES ('" + txtStateCode.Text.Trim() + "','" +
-                    txtStateName.Text.Trim() + "','" + txtStateCode.Text.Trim() + "')";
+                objCmd.CommandText = "INSERT INTO [dbo].[Country] (CountryId, CountryName, CountryCode) VALUES ('" + txtCountryID.Text.Trim() + "','" + txtCountryName.Text.Trim() + "','" + txtCountryCode.Text.Trim() + "')";
                 objCmd.ExecuteNonQuery();
             }
             objConn.Close();
-            Response.Redirect("~/State.aspx");
+            Response.Redirect("~/Country.aspx");
 
         }
-        private void BindCountryDropdown()
+        /*private void BindCountryDropdown()
         {
             SqlConnection objConn = new SqlConnection("Data Source=LAPTOP-NUIFP4D9\\SQLEXPRESS;Initial Catalog=AddressBook;Integrated Security=true;");
             objConn.Open();
@@ -84,12 +81,14 @@ namespace Addressbook
             ddlCountryID.DataTextField = "CountryName";
             ddlCountryID.DataBind();
 
+            // Adding a default "Select Country" option
             ddlCountryID.Items.Insert(0, new ListItem("Select Country", "0"));
 
             objConn.Close();
-        }
+        }*/
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+
 
             SqlConnection objConn = new SqlConnection("Data Source=LAPTOP-NUIFP4D9\\SQLEXPRESS;Initial Catalog=AddressBook;Integrated Security=true;");
             objConn.Open();
@@ -97,18 +96,21 @@ namespace Addressbook
             SqlCommand objCmd = objConn.CreateCommand();
             objCmd.CommandType = CommandType.Text;
 
-            int countryId = Convert.ToInt32(ddlCountryID.SelectedValue); // Get the selected CountryID
-            objCmd.CommandText = "INSERT INTO [dbo].[State] (StateName, StateCode, CountryID) VALUES (@StateName, @StateCode, @CountryID)";
+            // Set the command timeout to 60 seconds (default is 30 seconds)
+            objCmd.CommandTimeout = 60;
 
-            objCmd.Parameters.AddWithValue("@StateName", txtStateName.Text.Trim());
-            objCmd.Parameters.AddWithValue("@StateCode", txtStateCode.Text.Trim());
-            objCmd.Parameters.AddWithValue("@CountryID", countryId); 
+            // Do not insert the CountryID, as it's an identity column and auto-incremented
+            objCmd.CommandText = "INSERT INTO [dbo].[Country] (CountryName, CountryCode) VALUES (@CountryName, @CountryCode)";
+
+            objCmd.Parameters.AddWithValue("@CountryName", txtCountryName.Text.Trim());
+            objCmd.Parameters.AddWithValue("@CountryCode", txtCountryCode.Text.Trim());
 
             objCmd.ExecuteNonQuery();
             objConn.Close();
 
-            Response.Redirect("~/State.aspx");
-
+            // Redirect to the Country list page
+            Response.Redirect("~/Country.aspx");
         }
+
     }
 }
